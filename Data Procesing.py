@@ -5,14 +5,15 @@ import pandas as pd
 import numpy as np
 import datetime
 import math
-
+from google.colab import drive
+drive.mount('/content/drive')
 
 class data_preprocess:
     #load data of BE_offers, availability and variable cost
     def data_load (self):
-        offers_old = pd.read_csv(r"C:\Users\Γιάννης\Downloads\BE Matched Offers Quantity Differences (2021-01-01 to 2021-07-14) (2).csv", low_memory=False)
-        availability_old = pd.read_excel(r"C:\Users\Γιάννης\Downloads\Variable.xlsx")
-        variableCost_old = pd.read_csv(r"C:\Users\Γιάννης\Downloads\VariableCosts[2021-01-01 to 2021-07-14].csv", low_memory=False)
+        offers_old = pd.read_csv('/content/drive/MyDrive/BE/Offers/BE Matched Offers Quantity Differences (2020-11-01 to 2021-04-20).csv', low_memory=False)
+        availability_old = pd.read_csv('/content/drive/MyDrive/BE/Offers/UnitAvailability[01.11.2020-01.04.2021].csv')
+        variableCost_old= pd.read_csv('/content/drive/MyDrive/BE/Offers/VariableCosts[01.11.2020-01.04.2021].csv')
         return (offers_old, availability_old, variableCost_old)
     
 
@@ -22,7 +23,7 @@ class data_preprocess:
         offers, a, var = self.data_load()
         names = offers['Name'].unique()
         names = pd.DataFrame(names)
-        names.to_excel(r"C:\Users\Γιάννης\Downloads\Names.xlsx")
+        names.to_excel('/content/drive/MyDrive/BE/Offers/Names.xlsx')
         return (names)
 
 
@@ -219,7 +220,7 @@ class data_process(data_preprocess):
 
             g -= 1
             #create the excel file
-            vars()[i].to_excel(r'C:\Users\Γιάννης\Downloads/BE_'+str(energy_type)+'_New/' +str(i)+ '.xlsx')
+            vars()[i].to_excel('/content/drive/MyDrive/BE/Offers/BE_'+str(energy_type)+'_New/' +str(i)+ '.xlsx')
             print(g, i)
             return g
 
