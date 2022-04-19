@@ -224,4 +224,4 @@ class data_process(data_preprocess):
             return g
 
 
-print(data_process().files_creator('Up', 'PROTERGIA_CC'))
+print(data_process().files_creator('Up'))
