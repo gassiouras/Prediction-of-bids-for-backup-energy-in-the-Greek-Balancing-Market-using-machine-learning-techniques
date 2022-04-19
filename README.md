@@ -21,4 +21,14 @@ I recommend that you have all the files on the drive and link the python script 
 ### 2. Predictive models
 
 
+
+There are three different ways that I used to predict the offers.
+
+* Three naive models: The first one copy the last day offers that each unit made to predict the next week. The secont one copy the last week offers to predict the next. The third one set the predicted offers equal with the mean price of the last weeks offers
+* LSTM-regression and Encoder-Decoder LSTM models: Both of them are trained with the dataset and makes prediction for both the quantity and the price of each offer. The predicted values for the quantity, given by each model, are classified using some rules that the units are obligated to follow.
+* LSTM-ANN and LSTM-Random Forest Trees models: In this method I use the LSTM model to predict the number of the step that the unit will use for its offer. Then based on the number of steps the ANN and the Random Forest Trees models predict the actuall Quantity and Price of every offer.
+
+
+
+
  
