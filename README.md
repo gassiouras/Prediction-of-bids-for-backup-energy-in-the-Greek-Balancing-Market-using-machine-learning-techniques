@@ -11,3 +11,8 @@ Specifically, three categories of neural models were examined: Recurrent Neural 
 
 ## 2. Data and the cleaning programs:
 
+[Data Processing](https://github.com/gassiouras/Prediction-of-bids-for-backup-energy-in-the-Greek-Balancing-Market-using-machine-learning-techniques/blob/65e5c13c15066d45132f7761c83cd612a981abcb/Data%20Procesing.py)
+
+With this script we matching the offers that every unit had made and create separate files for every unit in order to train later our model and make predictions.
+
+ 
